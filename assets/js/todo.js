@@ -1,28 +1,26 @@
 var todoList = {
-  displayTodo: function displayTodos() {
-    console.log(this.displayTodo);
+  todos: [],
+  displayTodos: function () {
+    console.log('My todos:', this.todos);
+  },
+  addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.displayTodos();
+  },
+  changeTodo: function(position, todoText) {
+    this.todos[position].todoText = todoText;
+    this.displayTodos();
+  },
+  deleteTodo: function(postiion) {
+    this.todos.splice(position, 1);
+    this.displayTodos();
+  },
+  toggleComplete: function(position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+    this.displayTodos();
   }
-
-}
-
-// it should have a function to display todos
-function displayTodos() {
-  console.log(todos);
-}
-
-// it should have a function to add a todo
-function addTodo(todo) {
-  todos.push(todo);
-  displayTodos();
-}
-
-// it should have a function to change a todo
-function changeTodo(position, newValue) {
-  todo[position] = newValue;
-  displayTodos;
-}
-
-// it should have a function to delete a todo
-function deleteTodo() {
-
 }
