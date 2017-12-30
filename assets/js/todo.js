@@ -22,10 +22,11 @@ var todoList = {
     this.displayTodos();
   },
   changeTodo: function(position, todoText) {
+    // debugger;
     this.todos[position].todoText = todoText;
     this.displayTodos();
   },
-  deleteTodo: function(postiion) {
+  deleteTodo: function(position) {
     this.todos.splice(position, 1);
     this.displayTodos();
   },
@@ -54,5 +55,31 @@ var todoList = {
       }
     }
     this.displayTodos();
+  }
+}
+
+
+var handlers = {
+  displayTodos: function (){
+    todoList.displayTodos();
+  },
+  toggleAll: function (){
+    todoList.toggleAll();
+  }, 
+  addTodo: function (){
+    var addTodoTextInput = document.getElementById('addTodoTextInput');
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = '';
+  }, 
+  changeTodo: function (){
+    var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
+    var changeTodoTextInput = document.getElementById('changeTodoTextInput');
+    todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+    changeTodoPositionInput.value = '';
+    changeTodoTextInput.value = '';
+  },
+  deleteTodo: function (){
+    var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
+    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
   }
 }
