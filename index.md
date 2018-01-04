@@ -4,7 +4,9 @@ layout: default
 
 <h1>Todo List</h1>
 
-<div><button onclick="handlers.displayTodos()">Display Todos</button><button onclick="handlers.toggleAll()">Toggle All</button></div>
+<div>
+  <button onclick="handlers.toggleAll()">Toggle All</button>
+</div>
 
 <div>
   <button onclick="handlers.addTodo()">Add</button>
@@ -21,3 +23,11 @@ layout: default
   <button onclick="handlers.deleteTodo()">Delete</button>
   <input id="deleteTodoPositionInput" type="number">
 </div>
+
+<div>
+  <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+  <input id="toggleCompletedPositionInput" type="number">
+</div>
+
+<ul>
+</ul>
